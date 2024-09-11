@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> creating new element in DOM</title>
+</head>
+<body style="background-color:#212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const  parent= document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children);
+    // here we found htmlCollection o/p of praent.children.
+    //   console.log(parent.children[0].innerHTML);
+
+    // for(let i = 0; i< parent.children.length; i++){
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    // parent.children[1].style.color = "orange" 
+    // console.log(parent.firstElementChild);
+    // its o/p is <div class ="day"> Monday</div> as it is we can target the last element 
+    // const dayOne = document.querySelector('.day')
+    // console.log(dayOne);
+    // console.log(dayOne.nextElementSibling);
+    // console.log(dayOne.parentElement);
+    console.log("NODES: ", parent.childNodes);
+    //  here we learn about (Nodelist)
+    //  we count all the text node including line break etc.
+    
+</script>
+</html>
