@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure and Lexical</title>
+</head>
+
+<body>
+    <button id="ornage">orange</button>
+    <button id="green">Green</button>
+    <script>
+        // A closure is the combination of a function bundled together (enclosed) with
+        //  references to its surrounding state (the lexical environment).
+        //  In other words, a closure gives a function access to its outer scope. In JavaScript, 
+        // closures are created every time a function is created, at function creation time.
+
+        //  lexical scoping
+        //  here inner fucntion has the access of the outter function
+        //  bcz of its memory sharing
+        function init() {
+            let name = "Mozilla";
+            function displayName() {
+                console.log(name);
+            }
+            displayName();
+        }
+        init();
+
+        //  closure 
+        // when we return refrence of a funtion then in memory outer funtion comes with its lexical scoping
+
+        function makeFunc() {
+  const name = "Mozilla";
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+const myFunc = makeFunc();
+myFunc()
+    </script>
+
+    <script>
+       document.querySelector('orange').onclick = function(){
+        document.body.style.backgroundColor = `orange`
+}
+       document.getElementById("green").onclick = function(){
+        document.body.style.backgroundColor = `green`
+       }
+    </script>
+</body>
+
+</html>
